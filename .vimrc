@@ -28,6 +28,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 "visualize indents
 NeoBundle 'Yggdroot/indentLine'
+"auto pate mode"
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
 "code complement, snipet, snippet library
 if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
@@ -185,7 +187,7 @@ let g:ctrlp_funky_cmatchtype = 'path'
 """"""markdown preview """"""""
 au BufRead,BufNewFile *.md set filetype=markdown
 
-inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+"""""clip board""""""
+set clipboard=unnamed
+""""""mapping""""""""
+nnoremap Y y$
