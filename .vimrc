@@ -55,7 +55,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neomru.vim'
 "add end for ruby"
 NeoBundle 'tpope/vim-endwise'
-
+"コメントアウトを行う"
+NeoBundle 'tpope/vim-commentary'
 "----------------------------------------------------------
 call neobundle#end()
 
