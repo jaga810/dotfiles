@@ -189,5 +189,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 """""clip board""""""
 set clipboard=unnamed
+
+""""default decimal number"""""
+set nrformats=
 """"""mapping""""""""
 nnoremap Y y$
