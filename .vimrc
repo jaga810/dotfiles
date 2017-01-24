@@ -194,3 +194,5 @@ set clipboard=unnamed
 set nrformats=
 """"""mapping""""""""
 nnoremap Y y$
+
+inoremap <c-j> <esc>
