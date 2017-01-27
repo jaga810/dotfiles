@@ -197,3 +197,4 @@ set nrformats=
 nnoremap Y y$
 
 inoremap <c-j> <esc>
+nnoremap <F3> :noh<CR>
