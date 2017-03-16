@@ -191,10 +191,14 @@ au BufRead,BufNewFile *.md set filetype=markdown
 """""clip board""""""
 set clipboard=unnamed
 
-""""default decimal number"""""
-set nrformats=
+"""""netrw"""""
+set nocompatible
+filetype plugin on
+
 """"""mapping""""""""
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 nnoremap Y y$
 
 inoremap <c-j> <esc>
 nnoremap <F3> :noh<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
