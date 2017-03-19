@@ -3,7 +3,7 @@ autoload -U compinit
 compinit
 
 #set locale
-export LC_ALL=ja_JP.UTF-8
+export LC_ALL=C
 
 #git settings
 # source /usr/local/git/contrib/completion/git-prompt.sh
