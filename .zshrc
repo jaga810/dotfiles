@@ -1,14 +1,12 @@
 #completion
-autoload -U compinit
+autoload -Uz compinit
 compinit
+
+#set editor
+export EDITOR=vim
 
 #set locale
 export LC_ALL=C
-
-#git settings
-# source /usr/local/git/contrib/completion/git-prompt.sh
-# source /usr/local/git/contrib/completion/git-completion.bash
-# GIT_PS1_SHOWDIRTYSTATE=true
 
 #プロンプトの表示のカスタマイズ
 autoload -Uz colors
@@ -22,10 +20,11 @@ zstyle ':vcs_info:*' formats '%F{cyan}%c%u(%b)%f' #通常
 zstyle ':vcs_info:*' actionformats '[%b|%a]' #rebase途中, merge　コンフリクト等formats外の表示
 precmd() { vcs_info}
 
-PROMPT="${fg[cyan]}[%n@%m]${reset_color} "
+PROMPT="${fg[cyan]}[%n@%m]${reset_color} %# "
 RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 RPROMPT=$RPROMPT' ${vcs_info_msg_0_}'
-
+[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+    PROMPT="${fg[yellow]}${HOST%%.*}${reset_color} ${PROMPT}"
 #ctrl+sで出力がロックされるのを防ぐ
 stty stop undef
 
@@ -36,9 +35,17 @@ alias rm='rm -i'
 alias v='vim'
 alias diff='coloddiff'
 
-#環境変数の設定
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+if which pbcopy > /dev/null 2>&1 ; then
+    #Mac
+    alias -g C=' | pbcopy'
+elif which xsel > /dev/null 2>&1 ; then
+    #linux
+    alias -g C='|xsel --input --clipboard'
+elif which putclip >/dev/null 2>&1 ; then
+    #Cygwin
+    alias -g C='| putclip'
+fi
+
 
 #コマンド履歴
 HISTFILE=~/.zsh_history
