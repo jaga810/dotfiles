@@ -24,7 +24,7 @@ PROMPT="${fg[cyan]}[%n@%m]${reset_color} %# "
 RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 RPROMPT=$RPROMPT' ${vcs_info_msg_0_}'
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-    PROMPT="${fg[yellow]}${HOST%%.*}${reset_color} ${PROMPT}"
+    PROMPT="${fg[yellow]}[%n@%m]${reset_color} %# "
 #ctrl+sで出力がロックされるのを防ぐ
 stty stop undef
 
