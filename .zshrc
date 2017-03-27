@@ -35,8 +35,10 @@ alias la='ls -CFal'
 alias rm='rm -i'
 alias v='vim'
 alias diff='coloddiff'
+
 alias gad='git add'
 alias gco='git commit -m'
+alias g='git'
 
 if which pbcopy > /dev/null 2>&1 ; then
     #Mac
