@@ -57,6 +57,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-endwise'
 "コメントアウトを行う"
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'kchmck/vim-coffee-script'
 "----------------------------------------------------------
 call neobundle#end()
 
