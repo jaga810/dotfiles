@@ -23,6 +23,7 @@ precmd() { vcs_info}
 PROMPT="${fg[cyan]}[%n@%m]${reset_color} %# "
 RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 RPROMPT=$RPROMPT' ${vcs_info_msg_0_}'
+SPROMPT="%r is correct? [n,y,a,e]: "
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
     PROMPT="${fg[yellow]}[%n@%m]${reset_color} %# "
 #ctrl+sで出力がロックされるのを防ぐ
@@ -34,6 +35,8 @@ alias la='ls -CFal'
 alias rm='rm -i'
 alias v='vim'
 alias diff='coloddiff'
+alias gad='git add'
+alias gco='git commit -m'
 
 if which pbcopy > /dev/null 2>&1 ; then
     #Mac
@@ -53,6 +56,9 @@ HISTSIZE=6000000
 SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
+
+#options
+setopt correct #ミスタイプ時に修正
 
 #zplug
 source ~/.zplug/init.zsh
