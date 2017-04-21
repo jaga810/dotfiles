@@ -1,0 +1,14 @@
+"directory where plugins would be installed
+let s:dein_dir = expand('~/.cache/dein')
+"dein.vim self
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+"when dein.vim doesnt exsist
+if &runtimepath !~# '/dein.vim'
+	if !isdirectory(s:dein_repo_dir)
+		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+	endif
+	execute 'set runtimepath^=' . fnamemodify(s:dein_rpeo_dir, ':p')
+endif
+
+

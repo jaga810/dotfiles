@@ -106,7 +106,7 @@ set hlsearch "検索結果をハイライトする
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 """""cursor"""""
-set whichwrap=b,s,h,l,<,>,[,],~ "カーソルの左右移動で行末から次の行の行頭へ移動が可能に
+" set whichwrap=b,s,h,l,<,>,[,],~ "カーソルの左右移動で行末から次の行の行頭へ移動が可能に
 set number "行番号を表示
 set cursorline "カーソルLINEをハイライト
 "行が繰り返し表示されていた場合、行単位でなく表示行単位でカーソルを移動する
@@ -145,7 +145,7 @@ if &term =~"xterm"
     let &t_EI .= "\e[?20004l"
     let &pastetoggle = "\e[201~"
 
-    function XTermPasteBegin(ret)
+    function! XTermPasteBegin(ret)
         set paste
         return a:ret
     endfunction
@@ -189,6 +189,10 @@ let g:ctrlp_funky_cmatchtype = 'path'
 
 """"""markdown preview """"""""
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mkd set filetype=markdown
+   "Need kannokanno/Previm
+   nnoremap <silent> <,><m> :PrevimOpen<CR>
+   let g:vim_markdown_folding_disabled=1  "自動で折り畳まないように
 
 """""clip board""""""
 set clipboard=unnamed
@@ -204,3 +208,4 @@ nnoremap Y y$
 inoremap <c-j> <esc>
 nnoremap <F3> :noh<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
+

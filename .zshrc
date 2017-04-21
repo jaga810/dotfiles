@@ -40,6 +40,11 @@ alias gad='git add'
 alias gco='git commit -m'
 alias g='git'
 
+alias -g G='| grep '
+
+alias -s py='python'
+alias -s rb='ruby'
+
 if which pbcopy > /dev/null 2>&1 ; then
     #Mac
     alias -g C=' | pbcopy'
