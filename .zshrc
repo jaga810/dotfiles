@@ -36,6 +36,9 @@ alias rm='rm -i'
 alias v='vim'
 alias diff='coloddiff'
 
+alias -g ...='../..'
+alias -g ....='../../..'
+
 alias gad='git add'
 alias gco='git commit -m'
 alias g='git'
