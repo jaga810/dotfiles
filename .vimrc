@@ -77,4 +77,5 @@ set clipboard=unnamed
 
 """"etc mapping""""
 inoremap <c-j> <esc>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
