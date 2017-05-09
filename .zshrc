@@ -40,7 +40,7 @@ alias -g ...='../..'
 alias -g ....='../../..'
 
 alias gad='git add'
-alias gco='git commit -m'
+alias gcm='git commit -m'
 alias g='git'
 
 alias -g G='| grep '
