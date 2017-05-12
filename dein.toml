@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+#color scheme
+repo = 'tomasr/molokai'
+
+[[plugins]]
+#status bar
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+
+[[plugins]]
+rpeo = 'tpope/vim-commentary'

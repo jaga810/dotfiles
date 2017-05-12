@@ -53,6 +53,7 @@ set fileencoding=utf8 "保存時の文字コード
 set fileencodings=ucs-boms,utf-8,euc-jp,cp932 "読み込み時の文字コードの自動判別.左側が優先される
 set fileformats=unix,dos,mac "改行コードの自動判別.左側が優先
 set ambiwidth=double "■や◯文字が崩れる問題を解決
+set nrformats= "<C-a>で0が前置されていても10進数と解釈
 
 """""tab&indent""""
 set expandtab "タブ入力を複数の空白入力に置き換える
@@ -67,6 +68,11 @@ set laststatus=2 "ステータスラインを常に表示
 set showmode "現在のモードを表示
 set showcmd "打ったコマンドをステータスラインの下に表示
 set ruler "ステータスラインの右側にカーソルの現在位置を表示する
+let g:lightline = { 
+            \'colorscheme': 'wombat',
+            \'component': {
+            \}
+            \}
 
 """""cursor"""""
 set number
